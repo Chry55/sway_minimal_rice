@@ -1,0 +1,134 @@
+{
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/pm", "custom/spacer", "sway/workspaces", "custom/spacer", "sway/mode", "custom/spacer"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
+
+    "custom/rofi": {
+        "on-click": "rofi -show drun -monitor $(~/.config/sway/focus.sh)",
+        "format": "",
+        "tooltip": false,
+        "icon-size": 32
+    },
+    "custom/pm": {
+        "on-click": "~/.config/rofi/powermenu.sh",
+        "format": "",
+        "tooltip": false,
+        "icon-size": 32
+    },
+    "custom/spacer": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/firefox": {
+         "format": "",
+         "on-click": "firefox",
+         "tooltip": false,
+         "icon-size": 32
+    },
+    "custom/fileman": {
+         "format": "",
+         "on-click": "nemo",
+         "tooltip": false,
+         "icon-size": 32
+    },
+    "custom/wa": {
+         "format": "",
+         "on-click": "firefox -new-tab web.whatsapp.com",
+         "tooltip": false,
+         "icon-size": 32
+    },
+    "custom/tg": {
+         "format": "",
+         "on-click": "telegram-desktop",
+         "tooltip": false,
+         "icon-size": 32
+    },
+    "custom/vm": {
+         "format": "",
+         "on-click": "virt-manager",
+         "tooltip": false,
+         "icon-size": 32
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/mode": {
+		"format": "",
+		"tooltip": false
+    },
+    "sway/window": {
+    	"tooltip": false,
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+		"on-click": "swaync-client -t -sw",
+        "format": "{:%H:%M %A %d/%m/%Y}"
+    },
+//    "backlight": {
+        // "device": "acpi_video1",
+//        "format": "{icon}",
+//        "format-icons": ["", ""],
+//		"tooltip-format": "{percent}%"
+//    },
+//    "battery": {
+//        "states": {
+            // "good": 95,
+//            "warning": 30,
+//            "critical": 15
+//        },
+//        "format": "{icon}",
+//        "format-charging": "",
+//        "format-plugged": "",
+//		"tooltip-format": "{capacity}%"
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+//        "format-icons": ["", "", "", "", ""]
+//    },
+//    "battery#bat2": {
+//        "bat": "BAT2"
+//    },
+    "network": {
+        "format-wifi": "{icon}",
+		"format-icons": [ "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-disabled-wifi": "󰤭",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀",
+		"format-linked-wifi": "󰤩",
+        "format-disconnected": "⚠",
+        "tooltip-format": "{ipaddr}\n{essid}",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio#out": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-source": "{volume}%",
+		"tooltip-format": "Uscita: {volume}%\nIngresso: {format_source}",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+	"pulseaudio#source": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+		"tooltip": false,
+        "on-click": "pavucontrol",
+		"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%"
+    },
+
+}
