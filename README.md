@@ -14,3 +14,5 @@ A minimal Wayland rice focused for productivity
 * Theme: Qogir-Dark
 * Status bar: waybar
 * Text editor: neovim
+* Terminal: kitty
+* Terminal theme: dracula (credit: https://draculatheme.com/kitty)
