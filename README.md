@@ -16,3 +16,4 @@ A minimal Wayland rice focused for productivity
 * Text editor: neovim
 * Terminal: kitty
 * Terminal theme: dracula (credit: https://draculatheme.com/kitty)
+* Text editor: neovim with custom config (install vim-plug first)
