@@ -5,13 +5,13 @@
     "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
 
     "custom/rofi": {
-        "on-click": "rofi -show drun -monitor $(~/.config/sway/focus.sh)",
+        "on-click": "wofi --show drun",
         "format": "",
         "tooltip": false,
         "icon-size": 32
     },
     "custom/pm": {
-        "on-click": "~/.config/rofi/powermenu.sh",
+        "on-click": "~/.config/wofi/powermenu.sh",
         "format": "",
         "tooltip": false,
         "icon-size": 32
