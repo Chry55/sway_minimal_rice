@@ -8,7 +8,7 @@ A minimal Wayland rice focused for productivity
 
 * Shell: Zsh
 * WM: sway
-* Launcher: rofi
+* Launcher: wofi
 * Terminal: kitty
 * File manager: nemo
 * Theme: Qogir-Dark
