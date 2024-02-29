@@ -5,7 +5,7 @@
     "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
 
     "custom/rofi": {
-        "on-click": "wofi --show drun",
+        "on-click": "wofi --show drun --insensitive",
         "format": "",
         "tooltip": false,
         "icon-size": 32
