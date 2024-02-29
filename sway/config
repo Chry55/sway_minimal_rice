@@ -17,7 +17,7 @@ set $term kitty
 
 ### Launcher
 #
-set $menu wofi --show drun
+set $menu wofi --show drun --insensitive
 
 ### Output configuration
 #
