@@ -1,0 +1,25 @@
+image {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#input {
+	padding: 10px;
+	border-radius: 0;
+	border: none;
+	background-color: rgba(88, 91, 112, 0.9);
+	padding: 10px;
+}
+window {
+	background-color: rgba(30, 30, 46, 0.9);
+}
+#entry:selected {
+	background-color: rgba(100, 114, 125, 0.9);
+	outline: none;
+}
+#entry {
+	padding: 10px;
+	border-radius: 0px;
+}
+#entry.activatable {
+	background-color: rgba(100, 114, 125, 0.9);
+}
