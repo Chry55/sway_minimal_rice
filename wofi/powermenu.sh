@@ -1,15 +1,14 @@
-#!/bin/bash
 entries="Esci\nSospendi\nRiavvia\nSpegni"
 
-selected=$(echo -e $entries|wofi --width 300 --height 200 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+selected=$(printf $entries|wofi --width 250 --height 200 --dmenu --cache-file /dev/null)
 
 case $selected in
-  logout)
+  Esci)
     swaymsg exit;;
-  suspend)
+  Sospendi)
     exec systemctl suspend;;
-  reboot)
+  Riavvia)
     exec systemctl reboot;;
-  shutdown)
+  Spegni)
     exec systemctl poweroff -i;;
 esac
