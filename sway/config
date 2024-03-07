@@ -220,6 +220,7 @@ for_window [title="galculator"] floating enable;
 for_window [title="Regolazione del volume"] floating enable;
 for_window [title="Connessioni di rete"] floating enable;
 for_window [title="Scelta applicazione"] floating enable;
+for_window [title="Picture-in-Picture"] floating enable;
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
