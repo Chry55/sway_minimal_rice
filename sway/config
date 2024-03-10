@@ -17,7 +17,7 @@ set $term kitty
 
 ### Launcher
 #
-set $menu wofi --show drun --insensitive
+set $menu pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive
 
 ### Output configuration
 #
@@ -27,12 +27,6 @@ output DP-1 resolution 1920x1080@75.000Hz position 1920,0 adaptive_sync on
 output "*" bg "~/Immagini/Sfondi/macOS Mojave wallpaper.jpg" fill
 workspace 1 output HDMI-A-1
 workspace 2 output DP-1
-
-### Idle configuration
-#
-# Example configuration:
-#
-exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 bindsym $mod+l exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
 exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
@@ -75,7 +69,7 @@ input type:keyboard {
 
     # Clipboard
     exec wl-paste -t text --watch clipman store --no-persist
-    bindsym $mod+Shift+v exec clipman pick -t wofi --tool-args=""
+    bindsym $mod+Shift+v exec pgrep wofi >/dev/null 2>&1 && killall wofi || clipman pick -t wofi --tool-args=""
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
