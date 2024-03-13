@@ -35,7 +35,7 @@ exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#   input type:touchPad {
 #       dwt enabled
 #       tap enabled
 #       natural_scroll enabled
