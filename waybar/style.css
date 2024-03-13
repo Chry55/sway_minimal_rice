@@ -75,7 +75,7 @@ label:focus {
     background-color: transparent;
 }
 
-#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-pm, #custom-wa, #custom-tg, #mode, #keyboard-state, #network, #pulseaudio {
+#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-pm, #custom-wa, #custom-tg, #mode, #keyboard-state, #network, #pulseaudio, #battery, #backlight {
   padding-top: 4px;
   padding-bottom: 4px;
   padding-right: 8px;
