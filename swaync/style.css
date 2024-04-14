@@ -184,13 +184,13 @@
   font-size: 1.5rem;
 }
 .widget-title > button {
-  font-size: initial;
+  font-size: x-large;
   color: white;
   text-shadow: none;
   background: @noti-bg;
   border: 1px solid @noti-border-color;
   box-shadow: none;
-  border-radius: 12px;
+  border-radius: 5px;
 }
 .widget-title > button:hover {
   background: @noti-bg-hover;
@@ -203,7 +203,7 @@
 }
 .widget-dnd > switch {
   font-size: initial;
-  border-radius: 12px;
+  border-radius: 5px;
   background: @noti-bg;
   border: 1px solid @noti-border-color;
   box-shadow: none;
@@ -213,7 +213,7 @@
 }
 .widget-dnd > switch slider {
   background: @noti-bg-hover;
-  border-radius: 12px;
+  border-radius: 5px;
 }
 
 /* Label widget */
@@ -239,3 +239,34 @@
 .widget-mpris-subtitle {
   font-size: 1.1rem;
 }
+
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 5px;
+  margin: 5px 10px 10px 10px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  margin: 3px;
+  border-radius: 5px;
+  color: @text-color;
+}
+
+.widget-volume {
+  background: transparent;
+  padding: 5px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
+.widget-backlight {
+  background: transparent;
+  padding: 5px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
