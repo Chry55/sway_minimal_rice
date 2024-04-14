@@ -2,17 +2,11 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/pm", "custom/spacer", "sway/workspaces", "custom/spacer", "sway/mode", "custom/spacer"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "backlight", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
+    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
 
     "custom/rofi": {
         "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive",
         "format": "",
-        "tooltip": false,
-        "icon-size": 32
-    },
-    "custom/pm": {
-        "on-click": "~/.config/wofi/powermenu.sh",
-        "format": "",
         "tooltip": false,
         "icon-size": 32
     },
@@ -28,7 +22,7 @@
     },
     "custom/fileman": {
          "format": "",
-         "on-click": "thunar",
+         "on-click": "kitty nnn",
          "tooltip": false,
          "icon-size": 32
     },
@@ -71,15 +65,9 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
 	"on-click": "swaync-client -t -sw",
-        "format": "{:%H:%M %A %d/%m/%Y}"
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon}",
-        "format-icons": ["", ""],
-	"tooltip-format": "{percent}%"
+        "format": "{:%H:%M %d/%m/%Y}"
     },
     "battery": {
         "states": {
