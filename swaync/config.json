@@ -21,7 +21,7 @@
   "hide-on-clear": false,
   "hide-on-action": true,
   "script-fail-notify": true,
-  "widgets": ["buttons-grid", "volume", "mpris", "title", "dnd", "backlight", "notifications"],
+  "widgets": ["buttons-grid", "volume", "backlight", "mpris", "title", "dnd", "notifications"],
   "widget-config": {
     "title": {
       "text": "Notifiche",
