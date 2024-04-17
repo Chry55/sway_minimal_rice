@@ -180,4 +180,11 @@ label:focus {
 #clock {
     background-color: transparent;
     padding-right: 8px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#window {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
