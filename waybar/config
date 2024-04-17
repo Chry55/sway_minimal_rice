@@ -1,8 +1,8 @@
 {
     "position": "top", // Waybar position (top|bottom|left|right)
-    "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/pm", "custom/spacer", "sway/workspaces", "custom/spacer", "sway/mode", "custom/spacer"],
+    "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/pm", "custom/spacer", "sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
+    "modules-right": ["tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
 
     "custom/rofi": {
         "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive",
@@ -22,7 +22,7 @@
     },
     "custom/fileman": {
          "format": "",
-         "on-click": "kitty nnn",
+         "on-click": "thunar",
          "tooltip": false,
          "icon-size": 32
     },
@@ -52,10 +52,6 @@
             "locked": "",
             "unlocked": ""
         }
-    },
-    "sway/mode": {
-	"format": "",
-	"tooltip": false
     },
     "sway/window": {
     	"tooltip": false,

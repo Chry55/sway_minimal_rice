@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-    background-color: #1e1e2e;
+    background-color: transparent;
     opacity: .8;
     border-radius: 0;
     color: #ffffff;
@@ -47,7 +47,6 @@ window#waybar {
 #network,
 #pulseaudio,
 #tray,
-#mode,
 #custom-spacer,
 #spacer {
     margin: 0 0px;
@@ -75,7 +74,7 @@ label:focus {
     background-color: transparent;
 }
 
-#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #mode, #keyboard-state, #network, #pulseaudio, #battery, #backlight {
+#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #keyboard-state, #network, #pulseaudio, #battery, #backlight {
   padding-top: 4px;
   padding-bottom: 4px;
   padding-right: 8px;
@@ -87,32 +86,26 @@ label:focus {
 #custom-rofi {
   color: #FF0000;
   padding-left: 8px;
-  background-color: transparent;
 }
 
 #custom-firefox {
   color: #fa881e;
-  background-color: transparent;
 }
 
 #custom-fileman {
   color: #1e83fa;
-  background-color: transparent;
 }
 
 #custom-vm {
   color: #1efaed;
-  background-color: transparent;
 }
 
 #custom-wa {
   color: #008000;
-  background-color: transparent;
 }
 
 #custom-tg {
   color: #00FFFF;
-  background-color: transparent;
 }
 
 #custom-spacer {
@@ -151,6 +144,10 @@ label:focus {
     color: rgb(155, 147, 179);
 }
 
+#tray {
+	padding-left: 8px;
+}
+
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
@@ -187,4 +184,24 @@ label:focus {
 #clock {
     background-color: transparent;
     padding-right: 8px;
+}
+
+.modules-left {
+	background-color: rgba(30, 30, 46, 0.8);
+	border-radius: 12px;
+}
+
+.modules-right {
+	background-color: rgba(30, 30, 46, 0.8);
+	border-radius: 12px;
+}
+
+.modules-center {
+	background-color: rgba(30, 30, 46, 0.8);
+	border-radius: 12px;
+}
+
+#window {
+	padding-left: 8px;
+	padding-right: 8px;
 }
