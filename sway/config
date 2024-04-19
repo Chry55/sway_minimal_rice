@@ -47,7 +47,7 @@ exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
 
 input type:pointer {
 	accel_profile "flat"
-    pointer_accel -0.1 # set mouse sensitivity (between -1 and 1)
+    pointer_accel 0 # set mouse sensitivity (between -1 and 1)
 }
 input type:keyboard {
     xkb_layout us
@@ -215,6 +215,9 @@ for_window [title="Regolazione del volume"] floating enable;
 for_window [title="Connessioni di rete"] floating enable;
 for_window [title="Scelta applicazione"] floating enable;
 for_window [title="Picture-in-Picture"] floating enable;
+for_window [title="blueman"] floating enable;
+for_window [title="blueman-applet"] floating enable;
+for_window [title="Avanzamento*"] floating enable;
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -230,7 +233,7 @@ bindsym Print exec flameshot gui
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec_always /usr/bin/sunshine
-exec_always /usr/bin/lxpolkit
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always swaync
 
 include @sysconfdir@/sway/config.d/*
