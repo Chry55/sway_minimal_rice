@@ -218,6 +218,7 @@ for_window [title="Picture-in-Picture"] floating enable;
 for_window [title="blueman"] floating enable;
 for_window [title="blueman-applet"] floating enable;
 for_window [title="Avanzamento*"] floating enable;
+for_window [title="Conferma*"] floating enable;
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
