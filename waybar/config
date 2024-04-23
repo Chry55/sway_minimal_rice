@@ -2,7 +2,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/pm", "custom/spacer", "sway/workspaces", "custom/spacer"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/spacer", "clock"],
+    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/notification", "custom/spacer", "clock"],
 
     "custom/rofi": {
         "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive",
@@ -62,8 +62,8 @@
     },
     "clock": {
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
-	"on-click": "swaync-client -t -sw",
-        "format": "{:%H:%M %d/%m/%Y}"
+        "format": "{:%H:%M}",
+		"format-alt": "{:%d/%m/%Y}"
     },
     "battery": {
         "states": {
@@ -114,5 +114,24 @@
 	"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%"
     },
-
+	"custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 }

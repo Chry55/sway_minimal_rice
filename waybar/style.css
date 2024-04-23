@@ -74,7 +74,7 @@ label:focus {
     background-color: transparent;
 }
 
-#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #keyboard-state, #network, #pulseaudio, #battery, #backlight {
+#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #keyboard-state, #network, #pulseaudio, #battery, #backlight, #custom-notification {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-right: 8px;
@@ -179,9 +179,9 @@ label:focus {
 
 #clock {
     background-color: transparent;
-    padding-right: 8px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	padding-right: 8px;
 }
 
 #window {
