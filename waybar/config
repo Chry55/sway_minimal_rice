@@ -99,6 +99,7 @@
         "format-muted": "󰝟",
         "format-source": "{volume}%",
 	"tooltip-format": "Uscita: {volume}%\nIngresso: {format_source}",
+	"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "format-icons": {
             "default": ["", "", ""]
         },
@@ -110,6 +111,7 @@
         "format-source": "",
         "format-source-muted": "",
 	"tooltip": false,
+	"on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click": "pavucontrol",
 	"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%"
