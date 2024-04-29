@@ -1,10 +1,10 @@
 # sway_minimal_rice
 A minimal Wayland rice focused for productivity
 
-![Screenshot](2024-02-25_15-16.png)
-![Screenshot](2024-02-25_15-16_1.png)
-![Screenshot](2024-02-25_15-17.png)
-![Screenshot](2024-02-25_15-19.png)
+![Screenshot](2024-04-29_11-46.png)
+![Screenshot](2024-04-29_11-47.png)
+![Screenshot](2024-04-29_11-48.png)
+![Screenshot](2024-04-29_11-49.png)
 
 * Shell: Zsh
 * WM: sway
