@@ -2,7 +2,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/pm", "custom/spacer", "sway/workspaces", "custom/spacer"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/notification", "custom/spacer", "clock"],
+    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "custom/notification", "custom/spacer", "clock"],
 
     "custom/rofi": {
         "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive",
@@ -81,17 +81,6 @@
     },
     "battery#bat2": {
         "bat": "BAT2"
-    },
-    "network": {
-        "format-wifi": "{icon}",
-	"format-icons": [ "󰤟", "󰤢", "󰤥", "󰤨"],
-	"format-disabled-wifi": "󰤭",
-        "format-ethernet": "󰈀",
-        "format-linked": "󰈀",
-	"format-linked-wifi": "󰤩",
-        "format-disconnected": "⚠",
-        "tooltip-format": "{ipaddr}\n{essid}",
-        "on-click": "nm-connection-editor"
     },
     "pulseaudio#out": {
         // "scroll-step": 1, // %, can be a float

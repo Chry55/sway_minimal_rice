@@ -44,7 +44,6 @@ window#waybar {
 #clock,
 #battery,
 #backlight,
-#network,
 #pulseaudio,
 #tray,
 #custom-spacer,
@@ -74,7 +73,7 @@ label:focus {
     background-color: transparent;
 }
 
-#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #keyboard-state, #network, #pulseaudio, #battery, #backlight, #custom-notification {
+#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #keyboard-state, #pulseaudio, #battery, #backlight, #custom-notification {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-right: 8px;
@@ -126,18 +125,6 @@ label:focus {
 
 #pulseaudio.source.source-muted {
     color: #ff0b0b;
-}
-
-#network {
-    color: rgb(148, 200, 255);
-}
-
-#network.disconnected {
-    color: #f53c3c;
-}
-
-#network.linked {
-	color: #f53c3c;
 }
 
 #backlight {
