@@ -61,9 +61,8 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<tt><big>{calendar}</big></tt>",
-        "format": "{:%H:%M}",
-		"format-alt": "{:%d/%m/%Y}"
+        "tooltip": false,
+        "format": "{:L%a %d %b %Y %H:%M}",
     },
     "battery": {
         "states": {
@@ -87,12 +86,15 @@
         "format": "{icon}",
         "format-muted": "󰝟",
         "format-source": "{volume}%",
-	"tooltip-format": "Uscita: {volume}%\nIngresso: {format_source}",
-	"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"tooltip": false,
+	"on-click-right": "swayosd-client --output-volume mute-toggle",
         "format-icons": {
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+		"on-scroll-down": "swayosd-client --output-volume -5",
+        "on-scroll-up": "swayosd-client --output-volume 5"
+
     },
 	"pulseaudio#source": {
         // "scroll-step": 1, // %, can be a float
@@ -100,10 +102,10 @@
         "format-source": "",
         "format-source-muted": "",
 	"tooltip": false,
-	"on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+	"on-click-right": "swayosd-client --input-volume mute-toggle",
         "on-click": "pavucontrol",
-	"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
-        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%"
+	"on-scroll-down": "swayosd-client --input-volume -5",
+        "on-scroll-up": "swayosd-client --input-volume 5"
     },
 	"custom/notification": {
     "tooltip": false,
