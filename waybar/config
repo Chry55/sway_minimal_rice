@@ -55,6 +55,11 @@
     },
     "sway/window": {
     	"tooltip": false,
+		"icon": true,
+		"icon-size": 18,
+		"rewrite": {
+			"(.*) Mozilla Firefox": "Firefox"
+		}
     },
     "tray": {
         // "icon-size": 21,
