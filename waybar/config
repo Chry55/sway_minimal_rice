@@ -58,7 +58,7 @@
 		"icon": true,
 		"icon-size": 18,
 		"rewrite": {
-			"(.*) Mozilla Firefox": "Firefox"
+			"(.*)Mozilla Firefox": "Firefox"
 		}
     },
     "tray": {
