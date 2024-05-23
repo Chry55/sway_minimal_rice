@@ -24,12 +24,13 @@ set $menu pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insen
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 output HDMI-A-1 resolution 1920x1080@165.003Hz position 0,0 adaptive_sync on
 output DP-1 resolution 1920x1080@75.000Hz position 1920,0 adaptive_sync on
-output "*" bg "~/Immagini/Sfondi/macOS Mojave wallpaper.jpg" fill
+output HDMI-A-1 bg "~/Immagini/Sfondi/Zelda1.png" fill
+output DP-1 bg "~/Immagini/Sfondi/Zelda2.png" fill
 workspace 1 output HDMI-A-1
 workspace 2 output DP-1
 
-bindsym $mod+l exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
-exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
+bindsym $mod+l exec swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
+exec swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%h:%m"
 
 ### Input configuration
 #
@@ -190,7 +191,7 @@ bar {
 }
 default_border pixel 2
 default_floating_border pixel 2
-smart_borders on
+#smart_borders on
 client.unfocused #1e1e2e #1e1e2e #ffffff #1e1e2e
 client.focused_inactive #1e1e2e #1e1e2e #ffffff #1e1e2e
 client.focused #64727d #64727d #ffffff #64727d
