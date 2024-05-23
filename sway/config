@@ -30,7 +30,7 @@ workspace 1 output HDMI-A-1
 workspace 2 output DP-1
 
 bindsym $mod+l exec swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
-exec swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%h:%m"
+exec sleep 1 && swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
 
 ### Input configuration
 #
@@ -257,5 +257,6 @@ shadows_on_csd enable
 layer_effects "waybar" blur enable, shadows enable, corner_radius 12
 layer_effects "wofi" blur enable; shadows enable; corner_radius 12
 layer_effects "swaync-control-center" blur enable; blur_ignore_transparent enable;
+layer_effects "swaync-notification-window" blur enable; blur_ignore_transparent enable;
 
 include @sysconfdir@/sway/config.d/*
