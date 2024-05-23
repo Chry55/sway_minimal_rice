@@ -173,7 +173,7 @@
 
 /* Window behind control center and on all other monitors */
 .blank-window {
-  background: alpha(black, 0.25);
+  background: transparent;
 }
 
 /*** Widgets ***/
