@@ -57,7 +57,7 @@
         },
         {
           "label": "󰌾",
-          "command": "swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'"
+          "command": "swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr='%H:%M'"
         },
         {
           "label": "󰍃",
