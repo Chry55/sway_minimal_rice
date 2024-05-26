@@ -117,8 +117,8 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5% && ~/.config/sway/vol.sh",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5% && ~/.config/sway/vol.sh"
 
     },
 	"pulseaudio#source": {
@@ -129,7 +129,7 @@
 	"tooltip": false,
 	"on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click": "pavucontrol",
-	"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%"
+	"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5% && ~/.config/sway/mic.sh",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5% && ~/.config/sway/mic.sh"
     },
 }
