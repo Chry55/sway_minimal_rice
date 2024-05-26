@@ -3,9 +3,9 @@
 	"margin-right": 5,
 	"margin-top": 5,
     "position": "top", // Waybar position (top|bottom|left|right)
-    "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/pm", "custom/spacer", "sway/workspaces", "custom/spacer"],
+    "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/spacer", "sway/workspaces", "custom/spacer"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "custom/notification", "custom/spacer", "clock"],
+    "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/pm", "custom/spacer", "clock"],
 
     "custom/rofi": {
         "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive",
@@ -13,6 +13,12 @@
         "tooltip": false,
         "icon-size": 32
     },
+	"custom/pm": {
+        "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || ~/.config/wofi/powermenu.sh",
+        "format": "",
+        "tooltip": false,
+        "icon-size": 32
+	},
     "custom/spacer": {
         "format": " ",
         "tooltip": false
@@ -89,19 +95,30 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
+	"network": {
+        "format-wifi": "{icon}",
+		"format-icons": [ "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-disabled-wifi": "󰤭",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀",
+		"format-linked-wifi": "󰤩",
+        "format-disconnected": "⚠",
+        "tooltip-format": "{ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
     "pulseaudio#out": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon}",
         "format-muted": "󰝟",
         "format-source": "{volume}%",
 		"tooltip": false,
-	"on-click-right": "swayosd-client --output-volume mute-toggle",
+	"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "format-icons": {
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-		"on-scroll-down": "swayosd-client --output-volume -5",
-        "on-scroll-up": "swayosd-client --output-volume 5"
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%"
 
     },
 	"pulseaudio#source": {
@@ -110,23 +127,10 @@
         "format-source": "",
         "format-source-muted": "",
 	"tooltip": false,
-	"on-click-right": "swayosd-client --input-volume mute-toggle",
+	"on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click": "pavucontrol",
-	"on-scroll-down": "swayosd-client --input-volume -5",
-        "on-scroll-up": "swayosd-client --input-volume 5"
-    },
-	"custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "",
-      "none": "",
-      "dnd-notification": "",
-      "dnd-none": "",
-      "inhibited-notification": "",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": ""
+	"on-scroll-down": "pactl set-source-volume @DEFAULT_SINK@ -5%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SINK@ +5%"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",

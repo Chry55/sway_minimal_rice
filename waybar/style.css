@@ -46,7 +46,9 @@ window#waybar {
 #backlight,
 #pulseaudio,
 #tray,
+#network
 #custom-spacer,
+#custom-pm,
 #spacer {
     margin: 0 0px;
     color: #ffffff;
@@ -73,7 +75,7 @@ label:focus {
     background-color: transparent;
 }
 
-#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #keyboard-state, #pulseaudio, #battery, #backlight, #custom-notification {
+#custom-firefox, #custom-fileman, #custom-vm, #custom-rofi, #custom-wa, #custom-tg, #keyboard-state, #pulseaudio, #battery, #backlight, #network, #custom-pm {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-right: 8px;
@@ -85,6 +87,10 @@ label:focus {
 #custom-rofi {
   color: #FF0000;
   padding-left: 8px;
+}
+
+#custom-pm {
+	color: #FF0000;
 }
 
 #custom-firefox {
@@ -174,4 +180,16 @@ label:focus {
 #window {
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+#network {
+    color: rgb(148, 200, 255);
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#network.linked {
+	color: #f53c3c;
 }
