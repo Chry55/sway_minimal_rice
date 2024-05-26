@@ -1,9 +1,0 @@
-border-size=2
-border-color=#64727d
-border-radius=12
-background-color=#1e1e2e80
-default-timeout=5000
-
-[urgency=high]
-border-color=#bf616a
-default-timeout=0
