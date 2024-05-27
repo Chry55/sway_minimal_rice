@@ -1,9 +1,9 @@
 border-size=2
 border-color=#64727d
 border-radius=12
-background-color=#1e1e2eb0
+background-color=#1e1e2ea0
 default-timeout=5000
-progress-color=over #64727db0
+progress-color=over #64727da0
 
 [urgency=high]
 border-color=#bf616a
