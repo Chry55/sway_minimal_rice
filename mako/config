@@ -4,6 +4,7 @@ border-radius=12
 background-color=#1e1e2ec0
 default-timeout=5000
 progress-color=over #64727dc0
+layer=overlay
 
 [urgency=high]
 border-color=#bf616a
