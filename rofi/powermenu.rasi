@@ -1,5 +1,5 @@
 configuration {
-  font: "JetBrainsMonoNerdFont-Regular 12";
+  font: "JetBrainsMonoNerdFont-Regular 11";
   scroll-method: 0;
   disable-history: false;
   sidebar-mode: false;
