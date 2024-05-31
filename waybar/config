@@ -8,13 +8,13 @@
     "modules-right": ["custom/spacer", "tray", "custom/spacer", "keyboard-state", "battery", "pulseaudio#out", "pulseaudio#source", "network", "custom/pm", "custom/spacer", "clock"],
 
     "custom/rofi": {
-        "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive",
+        "on-click": "rofi -show drun",
         "format": "",
         "tooltip": false,
         "icon-size": 32
     },
 	"custom/pm": {
-        "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || ~/.config/wofi/powermenu.sh",
+        "on-click": "~/.config/rofi/powermenu.sh",
         "format": "",
         "tooltip": false,
         "icon-size": 32
