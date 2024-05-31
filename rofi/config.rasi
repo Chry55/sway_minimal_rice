@@ -1,7 +1,7 @@
 configuration {
   display-drun: "Cerca:";
   drun-display-format: "{name}";
-  font: "JetBrainsMonoNerdFont-Regular 12";
+  font: "JetBrainsMonoNerdFont-Regular 11";
   modi: "drun";
 
   // enabling the icons
