@@ -245,7 +245,7 @@ blur_radius 4
 corner_radius 12
 shadows enable
 shadows_on_csd enable
-layer_effects "waybar" blur enable, shadows enable, corner_radius 12
+layer_effects "waybar" blur enable, shadows enable
 layer_effects "rofi" blur enable; shadows enable; corner_radius 12
 layer_effects "notifications" blur enable; blur_ignore_transparent enable;
 
