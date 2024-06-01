@@ -1,7 +1,4 @@
 {
-	"margin-left": 5,
-	"margin-right": 5,
-	"margin-top": 5,
     "position": "top", // Waybar position (top|bottom|left|right)
     "modules-left": ["custom/rofi", "custom/fileman", "custom/firefox", "custom/wa", "custom/tg", "custom/vm", "custom/spacer", "sway/workspaces", "custom/spacer"],
     "modules-center": ["sway/window"],
