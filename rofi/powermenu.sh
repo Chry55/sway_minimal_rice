@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-ROFI_OPTIONS=(-theme ~/.config/rofi/powermenu.rasi -monitor $(~/.config/sway/focus.sh))
+ROFI_OPTIONS=(-theme ~/.config/rofi/powermenu.rasi)
 
 # Whether to ask for user's confirmation
 enable_confirmation=false
