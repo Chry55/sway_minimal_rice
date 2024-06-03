@@ -196,7 +196,7 @@ client.unfocused #1e1e2e #1e1e2e #ffffff #1e1e2e
 client.focused_inactive #1e1e2e #1e1e2e #ffffff #1e1e2e
 client.focused #64727d #64727d #ffffff #64727d
 #smart_gaps on
-gaps inner 5
+gaps inner 4
 #gaps outer 2
 
 for_window [title="Firefox – Indicatore condivisione"] floating enable, sticky enable, move position 1750 0;
@@ -245,7 +245,7 @@ blur_radius 4
 corner_radius 12
 shadows enable
 shadows_on_csd enable
-layer_effects "waybar" blur enable, shadows enable
+layer_effects "waybar" blur enable, blur_ignore_transparent enable;
 layer_effects "rofi" blur enable; shadows enable; corner_radius 12
 layer_effects "notifications" blur enable; blur_ignore_transparent enable;
 
