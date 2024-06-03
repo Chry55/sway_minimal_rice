@@ -65,7 +65,7 @@
     "sway/window": {
     	"tooltip": false,
 		"icon": true,
-		"icon-size": 18,
+		"icon-size": 20,
 		"rewrite": {
 			"(.*)Mozilla Firefox": "Firefox"
 		}
