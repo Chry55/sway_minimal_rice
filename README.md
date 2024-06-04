@@ -7,11 +7,10 @@ A minimal Wayland rice focused for productivity
 ![Screenshot](2024-04-29_11-49.png)
 
 * Shell: Zsh
-* WM: sway
+* WM: swayfx
 * Launcher: wofi
 * Terminal: kitty
-* File manager: nemo
-* Theme: Qogir-Dark
+* File manager: thunar
 * Status bar: waybar
 * Text editor: neovim
 * Terminal: kitty
