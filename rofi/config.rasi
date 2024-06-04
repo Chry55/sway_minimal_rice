@@ -1,20 +1,20 @@
 configuration {
-  display-drun: "Applicazioni:";
+  display-drun: "Cerca:";
   drun-display-format: "{name}";
-  font: "JetBrainsMonoNerdFont-Regular 12";
+  font: "JetBrainsMonoNerdFont-Regular 11";
   modi: "drun";
 
   // enabling the icons
   show-icons: true;
-  icon-theme: "Adwaita";
+  icon-theme: "WhiteSur-dark";
 }
 
 @theme "/dev/null"
 
 * {
-  bg: #1e1e2e90;
-  bg-alt: #585b7090;
-  bg-selected: #64727D90;
+  bg: #1e1e2e50;
+  bg-alt: #585b7080;
+  bg-selected: #64727D80;
 
   fg: #ffffff;
   fg-alt: #7f849c;
@@ -27,7 +27,7 @@ configuration {
 }
 
 window {
-  width: 30%;
+  width: 25%;
   background-color: @bg;
 }
 

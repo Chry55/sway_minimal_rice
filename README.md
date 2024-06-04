@@ -1,4 +1,4 @@
-# sway_minimal_rice
+# swayfx_minimal_rice
 A minimal Wayland rice focused for productivity
 
 ![Screenshot](2024-04-29_11-46.png)

@@ -8,6 +8,7 @@ image {
 	border: none;
 	background-color: rgba(88, 91, 112, 0.9);
 	padding: 10px;
+	box-shadow: none;
 }
 window {
 	background-color: rgba(30, 30, 46, 0.9);

@@ -17,19 +17,20 @@ set $term kitty
 
 ### Launcher
 #
-set $menu pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --insensitive
+set $menu rofi -show drun
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 output HDMI-A-1 resolution 1920x1080@165.003Hz position 0,0 adaptive_sync on
 output DP-1 resolution 1920x1080@75.000Hz position 1920,0 adaptive_sync on
-output "*" bg "~/Immagini/Sfondi/macOS Mojave wallpaper.jpg" fill
+output HDMI-A-1 bg "~/Immagini/Sfondi/Zelda1.png" fill
+output DP-1 bg "~/Immagini/Sfondi/Zelda2.png" fill
 workspace 1 output HDMI-A-1
 workspace 2 output DP-1
 
-bindsym $mod+l exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
-exec swaylock -e -f -i '~/Immagini/Sfondi/Overview.png'
+bindsym $mod+l exec swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
+exec swaylock -i '~/Immagini/Sfondi/macOS Mojave wallpaper.jpg' --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
 
 ### Input configuration
 #
@@ -69,7 +70,7 @@ input type:keyboard {
 
     # Clipboard
     exec wl-paste -t text --watch clipman store --no-persist
-    bindsym $mod+Shift+v exec pgrep wofi >/dev/null 2>&1 && killall wofi || clipman pick -t wofi --tool-args=""
+    bindsym $mod+Shift+v exec clipman pick -t rofi --tool-args="-theme ~/.config/rofi/clipboard.rasi"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -190,13 +191,13 @@ bar {
 }
 default_border pixel 2
 default_floating_border pixel 2
-smart_borders on
+#smart_borders on
 client.unfocused #1e1e2e #1e1e2e #ffffff #1e1e2e
 client.focused_inactive #1e1e2e #1e1e2e #ffffff #1e1e2e
 client.focused #64727d #64727d #ffffff #64727d
-smart_gaps on
-gaps inner 2
-gaps outer 2
+#smart_gaps on
+gaps inner 4
+#gaps outer 2
 
 for_window [title="Firefox – Indicatore condivisione"] floating enable, sticky enable, move position 1750 0;
 for_window [title="Informazioni su Mozilla Firefox"] floating enable, resize set height 40 ppt;
@@ -216,14 +217,14 @@ for_window [title="Connessioni di rete"] floating enable;
 for_window [title="Scelta applicazione"] floating enable;
 for_window [title="Picture-in-Picture"] floating enable;
 for_window [title="blueman"] floating enable;
-for_window [title="blueman-applet"] floating enable;
+for_window [title="Bluetooth"] floating enable;
 for_window [title="Avanzamento*"] floating enable;
 for_window [title="Conferma*"] floating enable;
 
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-#bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && ~/.config/sway/vol.sh
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && ~/.config/sway/vol.sh
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 #bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 #bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -231,19 +232,21 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym Print exec flameshot gui
 
-exec_always swayosd-server
-bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5
-bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -5
-bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
-bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
-#bindsym XF86MonBrightnessUp exec swayosd-client --brightness +5
-#bindsym XF86MonBrightnessUp exec swayosd-client --brightness -5
-
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec_always /usr/bin/sunshine
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always swaync
-exec_always nm-applet
+exec_always mako
+
+# swayfx
+blur enable
+blur_passes 3
+blur_radius 4
+corner_radius 12
+shadows enable
+shadows_on_csd enable
+layer_effects "waybar" blur enable, blur_ignore_transparent enable;
+layer_effects "rofi" blur enable; shadows enable; corner_radius 12
+layer_effects "notifications" blur enable; blur_ignore_transparent enable;
 
 include @sysconfdir@/sway/config.d/*
