@@ -5,9 +5,9 @@ A minimal Wayland rice focused for productivity
 ![Screenshot](Tiling.png)
 ![Screenshot](Rofi.png)
 
-* Shell: Zsh
+* Shell: zsh
 * WM: swayfx
-* Launcher: wofi
+* Launcher: rofi
 * Terminal: kitty
 * File manager: thunar
 * Status bar: waybar
