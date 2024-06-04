@@ -1,10 +1,9 @@
 # swayfx_minimal_rice
 A minimal Wayland rice focused for productivity
 
-![Screenshot](2024-04-29_11-46.png)
-![Screenshot](2024-04-29_11-47.png)
-![Screenshot](2024-04-29_11-48.png)
-![Screenshot](2024-04-29_11-49.png)
+![Screenshot](Wall.png)
+![Screenshot](Tiling.png)
+![Screenshot](Rofi.png)
 
 * Shell: Zsh
 * WM: swayfx
