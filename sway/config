@@ -217,7 +217,7 @@ for_window [title="Connessioni di rete"] floating enable;
 for_window [title="Scelta applicazione"] floating enable;
 for_window [title="Picture-in-Picture"] floating enable;
 for_window [title="blueman"] floating enable;
-for_window [title="blueman-applet"] floating enable;
+for_window [title="Bluetooth"] floating enable;
 for_window [title="Avanzamento*"] floating enable;
 for_window [title="Conferma*"] floating enable;
 
