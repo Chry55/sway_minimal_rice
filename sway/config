@@ -22,15 +22,15 @@ set $menu rofi -show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output HDMI-A-1 resolution 1920x1080@165.003Hz position 0,0 adaptive_sync on
-output DP-1 resolution 1920x1080@75.000Hz position 1920,0 adaptive_sync on
+output HDMI-A-1 resolution 1920x1080@165.003Hz position 0,0 adaptive_sync off
+output DP-1 resolution 1920x1080@75.000Hz position 1920,0 adaptive_sync off
 output HDMI-A-1 bg "~/Immagini/Sfondi/Zelda1.png" fill
 output DP-1 bg "~/Immagini/Sfondi/Zelda2.png" fill
 workspace 1 output HDMI-A-1
 workspace 2 output DP-1
 
 bindsym $mod+l exec swaylock --screenshots --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
-exec swaylock -i '~/Immagini/Sfondi/macOS Mojave wallpaper.jpg' --effect-blur 4x3 --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
+exec swaylock -i '~/Immagini/Sfondi/macOS Mojave wallpaper.jpg' --clock --indicator --ring-color 1e1e2e --timestr="%H:%M"
 
 ### Input configuration
 #
@@ -237,6 +237,7 @@ exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec_always /usr/bin/sunshine
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always mako
+exec "~/.config/sway/vrr_fullscreen.sh"
 
 # swayfx
 blur enable
