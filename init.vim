@@ -26,9 +26,9 @@ set encoding=UTF-8
 
 call plug#end()
 
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeMirror<CR>:NERDTree<CR>
+nnoremap <C-t> :NERDTreeMirror<CR>:NERDTreeToggle<CR>
 
 :set completeopt-=preview " For No Previews
 
@@ -120,3 +120,6 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
