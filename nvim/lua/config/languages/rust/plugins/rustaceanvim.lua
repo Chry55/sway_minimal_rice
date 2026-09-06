@@ -1,0 +1,48 @@
+local rust_lsp = require("config.languages.rust.lsp")
+
+return {
+  "mrcjkb/rustaceanvim",
+  version = "^9",
+  lazy = false,
+  ft = { "rust" },
+  init = function()
+    local format_augroup = vim.api.nvim_create_augroup("RustaceanvimFormatOnSave", {})
+    local capabilities = require("config.lsp.capabilities")
+    local settings = vim.deepcopy(rust_lsp.settings or {})
+
+    vim.g.rustaceanvim = {
+      server = {
+        capabilities = capabilities,
+        settings = settings,
+        default_settings = settings,
+        on_attach = function(client, bufnr)
+          -- Disable semantic tokens to avoid LSP re-highlighting (e.g. splitting Rust macros into mixed colors).
+          vim.lsp.semantic_tokens.enable(false, { bufnr = bufnr, client_id = client.id })
+
+          if not client:supports_method("textDocument/formatting") then
+            return
+          end
+
+          vim.api.nvim_clear_autocmds({ group = format_augroup, buf = bufnr })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = format_augroup,
+            buf = bufnr,
+            callback = function()
+              if vim.v.cmdbang == 1 then
+                return
+              end
+
+              vim.lsp.buf.format({
+                bufnr = bufnr,
+                timeout_ms = 3000,
+                filter = function(c)
+                  return c.name == "rust-analyzer" or c.name == "rust_analyzer"
+                end,
+              })
+            end,
+          })
+        end,
+      },
+    }
+  end,
+}

@@ -1,0 +1,49 @@
+-- bootstrap plugins & lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" -- path where its going to be installed
+if not vim.uv.fs_stat(lazypath) then
+  local clone_output = vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+
+  if vim.v.shell_error ~= 0 then
+    error("Failed to clone lazy.nvim:\n" .. clone_output)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+local languages = require("config.languages")
+local language_plugins = {}
+
+for _, lang in pairs(languages) do
+  if type(lang.plugins) == "table" then
+    vim.list_extend(language_plugins, lang.plugins)
+  end
+end
+
+local spec = {
+  { import = "plugins" },
+}
+
+if #language_plugins > 0 then
+  vim.list_extend(spec, language_plugins)
+end
+
+require("lazy").setup({
+  spec = spec,
+  ui = {
+    icons = {
+      ft = "",
+      lazy = "󰂠",
+      loaded = "",
+      not_loaded = "",
+    },
+  },
+  rocks = {
+    enabled = false,
+  },
+})
